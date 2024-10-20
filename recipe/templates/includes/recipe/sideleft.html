@@ -1,0 +1,11 @@
+{% load my_tags %}
+
+<div class="sideleft">
+	<h2 class='sl_h2'>Категории</h2>
+{% get_cat as cat %}
+	{% for c in cat %}
+		<h3 class='sl_h3'><a href="{% url 'categorys' cat_slug=c.slug %}"class="sl_a">{{c.name}}</a></h3>
+	{% endfor %}
+
+	<div class="rec">reclama</div>
+</div>

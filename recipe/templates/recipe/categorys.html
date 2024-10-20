@@ -1,0 +1,15 @@
+{% extends 'recipe/base.html' %}
+{% load thumbnail %}
+
+{% block sideleft %}
+{% endblock %}
+
+{% block sidecentr %}
+	{{cats.name}}
+	{% for p in post %}
+		<p><a href="{% url 'post_recip' pr_slug=p.slug %}">{{p.title}}</a></p>
+		{% thumbnail p.image '400x400' crop='center' as im %}
+			<img src="{{im.url}}" alt="">
+		{% endthumbnail %}
+	{% endfor %}
+{% endblock %}

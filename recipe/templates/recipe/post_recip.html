@@ -1,0 +1,25 @@
+{% extends 'recipe/base.html' %}
+{% load thumbnail %}
+
+
+{% block sidecentr %}
+	
+
+	{% for p in post_r %}
+	{% if p.title %}
+		<h2 class='title'>{{p.title}}</h2>
+	{% endif %}
+		{% if p.image %}
+		{% thumbnail p.image '400x400' crop=center as im %}
+			<p class='img'><img src="{{im.url}}" alt=""></p>
+		{% endthumbnail %}
+		
+		{% endif %}
+		<p class='text'>{{p.text}}</p><br>
+		{% if p.author %}
+			<p class='author'>Автор статьи - <b>{{p.author}}</b></p>
+		{% endif %}
+		
+	{% endfor %}
+
+{% endblock %}

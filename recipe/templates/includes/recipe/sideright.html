@@ -1,0 +1,12 @@
+{% load my_tags %}
+
+<div class="sideright">
+	<h2 class='sr_h2'>Теги</h2>
+	<div class="sr_tags">
+		{% get_tag as tags %}
+		{% for t in tags %}
+			<a href="{% url 'tags' tag_slug=t.slug %}"class='sr_a'><p>{{t.name}}</p></a>
+		{% endfor %}
+	</div>
+	<div class="rec">reclama</div>
+</div>

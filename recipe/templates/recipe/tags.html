@@ -1,0 +1,8 @@
+{% extends 'recipe/base.html' %}
+
+
+{% block sidecentr %}
+	{% for p in posts %}
+		<a href="{% url 'post_recip' pr_slug=p.slug %}"><h2>{{p.title}}</h2></a>
+	{% endfor %}
+{% endblock %}

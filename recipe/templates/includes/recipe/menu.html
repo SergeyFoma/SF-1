@@ -1,0 +1,12 @@
+<div class="menu">
+	<ul>
+		{% if request.path == '/' %}
+			<li><h3>Главная</h3></li>
+		{% else %}
+			<li><a href="{% url 'index' %}">Главная</a></li>
+		{% endif %}
+		<li><a href="">Регистрация</a></li>
+		<li><a href="">Войти в профиль</a></li>
+		<li><a href="">Выход</a></li>
+	</ul>
+</div>

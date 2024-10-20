@@ -1,0 +1,12 @@
+{% extends 'recipe/base.html' %}
+
+
+{% block sidecentr %}
+{{subcat.name}}
+	{% for p in post %}
+		<h2><a href="{% url 'post_recip' pr_slug=p.slug %}">{{p.title}}</a></h2>
+		<p><img src="{{p.image.url}}" alt=""width=200px;></p>
+		<p>{{p.text}}</p>
+		<p>Дата публикации: {{p.date}}</p>
+	{% endfor %}
+{% endblock %}

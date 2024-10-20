@@ -1,0 +1,13 @@
+{% extends "recipe/base.html" %}
+
+
+{% block sidecentr %}
+<form action=""method='post'>
+	{% csrf_token %}
+	{% for f in form %}
+	<div>{{ f.label }}</div>
+	<div>{{ f }}</div>
+	{% endfor %}
+	<button type='submit'>register</button>
+</form>
+{% endblock %}

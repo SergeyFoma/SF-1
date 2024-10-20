@@ -1,0 +1,20 @@
+{% extends 'recipe/base.html' %}
+{% load my_tags %}
+{% load thumbnail %}
+
+{% block sidecentr %}
+{% for m in messages %}
+{{m}}
+{% endfor %}
+<div class="sc">
+	{% get_cat as cat %}
+		{% for c in cat %}
+		<div class="cat">
+			<h2><a href="{% url 'categorys' cat_slug=c.slug %}"class='a'>{{c.name}}</h2>
+			{% thumbnail c.image '400x400' crop=center as im %}
+				<img src="{{im.url}}" alt="">
+			{% endthumbnail %}</a>
+		</div>
+		{% endfor %}
+</div>
+{% endblock %}
